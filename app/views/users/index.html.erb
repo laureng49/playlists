@@ -1,0 +1,26 @@
+<h1>Register</h1>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+<% if flash[:errors] %>
+  <%= flash[:errors] %>
+<% end %>
+<form action = '/register' method = 'post'>
+	<input name= "authenticity_token" value = "<% form_authenticity_token %>" type = "hidden">
+	<p>First Name:<input type = "text" name = "first_name"></p>
+	<p>Last Name:<input type = "text" name = "last_name"></p>
+	<p>Email:<input type = "text" name = "email"></p>
+	<p>Password:<input type = "text" name = "password"></p>
+	<input type = "submit" value = "Register">
+</form>
+
+<h1>Login</h1>
+  <% if flash[:errors] %>
+    <%= flash[:errors] %>
+  <% end %>
+<form action = '/login' method = 'post'>
+	<input name= "authenticity_token" value = "<% form_authenticity_token %>" type = "hidden">
+	<p>Email:<input type = "text" name = "email"></p>
+	<p>Password:<input type = "text" name = "password"></p>
+	<input type = "submit" value = "Login">
+</form>

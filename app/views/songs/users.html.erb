@@ -1,0 +1,18 @@
+<a href='/songs'>Dashboard</a>
+<a href='/logout'>Log Out</a>
+
+<h3>Others who added <%= @song.artist %> - <%= @song.title %></h3>
+
+
+<table>
+	<tr>
+	    <th>Name</th>
+	    <th>Times Added</th>
+  	</tr>
+<% @otherusers.each do |meh| %>
+	<tr>
+		<td><a href='/users/<%= meh.user_id %>'><%= meh.user.first_name %></td>
+		<td><%= meh.counto %></td>
+	</tr>
+<% end %>
+</table>
